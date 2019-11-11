@@ -21,6 +21,7 @@
 		030A972B237508D800236648 /* PopupChooseFontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A972A237508D800236648 /* PopupChooseFontViewController.swift */; };
 		030A972D237508F600236648 /* PopupChooseFontColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A972C237508F600236648 /* PopupChooseFontColorViewController.swift */; };
 		030A9731237562F800236648 /* ListGuestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A9730237562F800236648 /* ListGuestTableViewController.swift */; };
+		03E702752379000800AF5886 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E702742379000800AF5886 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		030A972A237508D800236648 /* PopupChooseFontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupChooseFontViewController.swift; sourceTree = "<group>"; };
 		030A972C237508F600236648 /* PopupChooseFontColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupChooseFontColorViewController.swift; sourceTree = "<group>"; };
 		030A9730237562F800236648 /* ListGuestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGuestTableViewController.swift; sourceTree = "<group>"; };
+		03E702742379000800AF5886 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				030A972A237508D800236648 /* PopupChooseFontViewController.swift */,
 				030A972C237508F600236648 /* PopupChooseFontColorViewController.swift */,
 				030A9730237562F800236648 /* ListGuestTableViewController.swift */,
+				03E702742379000800AF5886 /* Extension.swift */,
 			);
 			path = MidTerm;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				030A9731237562F800236648 /* ListGuestTableViewController.swift in Sources */,
 				030A972123727BE800236648 /* GuestMainViewController.swift in Sources */,
 				030A972D237508F600236648 /* PopupChooseFontColorViewController.swift in Sources */,
+				03E702752379000800AF5886 /* Extension.swift in Sources */,
 				030A9727237413F500236648 /* ListGuestTableViewCell.swift in Sources */,
 				030A970F237178D600236648 /* ViewController.swift in Sources */,
 				030A971F23727BC400236648 /* AdminMainViewController.swift in Sources */,

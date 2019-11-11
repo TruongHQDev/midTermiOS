@@ -603,18 +603,8 @@
                                             <constraint firstAttribute="bottom" secondItem="OlE-6I-VtM" secondAttribute="bottom" id="zbm-Ic-bv4"/>
                                         </constraints>
                                     </view>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TfT-a3-6vB">
-                                        <rect key="frame" x="75" y="74" width="225" height="150"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="225" id="IU8-ii-QOA"/>
-                                            <constraint firstAttribute="height" constant="150" id="Wob-2b-Zbo"/>
-                                        </constraints>
-                                        <connections>
-                                            <segue destination="kBl-RC-m7h" kind="embed" id="bHg-H9-76G"/>
-                                        </connections>
-                                    </containerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpT-0a-KrP">
-                                        <rect key="frame" x="104" y="73" width="263" height="30"/>
+                                        <rect key="frame" x="104" y="73" width="254" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs7-X9-s5v">
                                                 <rect key="frame" x="20" y="5" width="10.5" height="20"/>
@@ -622,19 +612,25 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xtw-rs-mMA">
-                                                <rect key="frame" x="47.5" y="0.0" width="217.5" height="31"/>
+                                            <slider opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17" minValue="17" maxValue="57" translatesAutoresizingMaskIntoConstraints="NO" id="Xtw-rs-mMA">
+                                                <rect key="frame" x="42" y="0.0" width="214" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="210" id="wK5-Ha-h0R"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="sldFontSize:" destination="vdV-Qv-Wt9" eventType="valueChanged" id="DzD-Ig-OYJ"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Xtw-rs-mMA" secondAttribute="trailing" id="1x7-1j-vSI"/>
                                             <constraint firstItem="zs7-X9-s5v" firstAttribute="top" secondItem="fpT-0a-KrP" secondAttribute="top" constant="5" id="3wS-tK-wNb"/>
+                                            <constraint firstItem="Xtw-rs-mMA" firstAttribute="top" secondItem="fpT-0a-KrP" secondAttribute="top" id="799-Pm-RzF"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xtw-rs-mMA" secondAttribute="bottom" id="A4V-nz-1jQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xtw-rs-mMA" secondAttribute="trailing" id="Kwd-yQ-nKw"/>
                                             <constraint firstItem="zs7-X9-s5v" firstAttribute="leading" secondItem="fpT-0a-KrP" secondAttribute="leading" constant="20" id="OIJ-sy-uG6"/>
                                             <constraint firstItem="zs7-X9-s5v" firstAttribute="centerY" secondItem="fpT-0a-KrP" secondAttribute="centerY" id="PbT-lk-NHn"/>
-                                            <constraint firstItem="Xtw-rs-mMA" firstAttribute="centerY" secondItem="fpT-0a-KrP" secondAttribute="centerY" id="Q2k-GF-kQS"/>
                                             <constraint firstAttribute="height" constant="30" id="S0r-7w-jcc"/>
-                                            <constraint firstItem="Xtw-rs-mMA" firstAttribute="leading" secondItem="zs7-X9-s5v" secondAttribute="trailing" constant="19" id="Zmo-zr-wrK"/>
                                             <constraint firstAttribute="bottom" secondItem="zs7-X9-s5v" secondAttribute="bottom" constant="5" id="arN-EI-a7y"/>
                                         </constraints>
                                     </view>
@@ -674,6 +670,16 @@
                                             <constraint firstAttribute="trailing" secondItem="jRO-yq-YDT" secondAttribute="trailing" id="w77-bl-O33"/>
                                         </constraints>
                                     </view>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TfT-a3-6vB">
+                                        <rect key="frame" x="50" y="74" width="275" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="275" id="IU8-ii-QOA"/>
+                                            <constraint firstAttribute="height" constant="200" id="Wob-2b-Zbo"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="kBl-RC-m7h" kind="embed" identifier="eventToPopupFont" id="bHg-H9-76G"/>
+                                        </connections>
+                                    </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygv-r4-EAb">
                                         <rect key="frame" x="75" y="138" width="225" height="150"/>
                                         <constraints>
@@ -706,7 +712,7 @@
                                     <constraint firstAttribute="bottom" secondItem="oUY-L6-BJ6" secondAttribute="bottom" constant="5" id="gHs-UG-Veb"/>
                                     <constraint firstAttribute="height" constant="135" id="j6F-Uf-bb1"/>
                                     <constraint firstAttribute="bottom" secondItem="MIo-DI-7RY" secondAttribute="bottom" constant="10" id="xCH-Gg-hyJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="fpT-0a-KrP" secondAttribute="trailing" constant="8" id="y1l-Xr-pMs"/>
+                                    <constraint firstAttribute="trailing" secondItem="fpT-0a-KrP" secondAttribute="trailing" constant="17" id="y1l-Xr-pMs"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1047,30 +1053,91 @@
         <!--Popup Choose Font View Controller-->
         <scene sceneID="u0L-5T-P82">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ev-5N-XPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PopupChooseFontViewController" id="kBl-RC-m7h" customClass="PopupChooseFontViewController" customModule="MidTerm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pdr-kg-MvC">
-                        <rect key="frame" x="0.0" y="0.0" width="225" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="275" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rH-66-2gR">
+                                <rect key="frame" x="137.5" y="160" width="137.5" height="40"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="okTapped:" destination="kBl-RC-m7h" eventType="touchUpInside" id="81U-aG-8XF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlX-Ql-H7v">
+                                <rect key="frame" x="0.0" y="160" width="137.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="tEH-7h-eea"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="kBl-RC-m7h" eventType="touchUpInside" id="UdA-M2-lyH"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HL0-XI-NFO">
+                                <rect key="frame" x="0.0" y="0.0" width="275" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="ODM-5k-COJ"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jV8-I7-1Yx">
+                                <rect key="frame" x="213" y="65" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="test:" destination="kBl-RC-m7h" eventType="touchUpInside" id="HjW-uw-NJl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.47751299699999999" blue="0.33335630519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6rH-66-2gR" firstAttribute="width" secondItem="DlX-Ql-H7v" secondAttribute="width" id="5yP-Ta-Iz2"/>
+                            <constraint firstItem="HL0-XI-NFO" firstAttribute="top" secondItem="Tlb-0b-H6l" secondAttribute="top" id="E2n-bk-rIe"/>
+                            <constraint firstItem="DlX-Ql-H7v" firstAttribute="leading" secondItem="Tlb-0b-H6l" secondAttribute="leading" id="GRT-R0-BPA"/>
+                            <constraint firstItem="HL0-XI-NFO" firstAttribute="trailing" secondItem="Tlb-0b-H6l" secondAttribute="trailing" id="RvW-JG-kUR"/>
+                            <constraint firstItem="6rH-66-2gR" firstAttribute="bottom" secondItem="Tlb-0b-H6l" secondAttribute="bottom" id="SZv-XN-akN"/>
+                            <constraint firstItem="6rH-66-2gR" firstAttribute="height" secondItem="DlX-Ql-H7v" secondAttribute="height" id="THt-s6-OMU"/>
+                            <constraint firstItem="6rH-66-2gR" firstAttribute="trailing" secondItem="Tlb-0b-H6l" secondAttribute="trailing" id="UEo-3c-Kw6"/>
+                            <constraint firstItem="DlX-Ql-H7v" firstAttribute="bottom" secondItem="Tlb-0b-H6l" secondAttribute="bottom" id="bJ5-Xs-Chz"/>
+                            <constraint firstItem="DlX-Ql-H7v" firstAttribute="width" secondItem="Tlb-0b-H6l" secondAttribute="width" multiplier="1/2" id="edC-kS-4c6"/>
+                            <constraint firstItem="HL0-XI-NFO" firstAttribute="leading" secondItem="Tlb-0b-H6l" secondAttribute="leading" id="lPa-l2-wXK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tlb-0b-H6l"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerViewFont" destination="HL0-XI-NFO" id="fNw-ed-JHM"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ev-5N-XPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-692" y="1467"/>
+            <point key="canvasLocation" x="-692" y="1466.2668665667168"/>
         </scene>
         <!--Popup Choose Font Color View Controller-->
         <scene sceneID="ZbP-1W-yHy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3JP-C2-eVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PopupChooseFontColorViewController" id="gh0-gU-mxw" customClass="PopupChooseFontColorViewController" customModule="MidTerm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IxR-Xr-daY">
                         <rect key="frame" x="0.0" y="0.0" width="225" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifW-UC-EYz">
+                                <rect key="frame" x="89" y="60" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="test:" destination="gh0-gU-mxw" eventType="touchUpInside" id="WGM-Kd-9mn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.66102160740000004" green="0.87998774189999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="CZx-O6-cek"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3JP-C2-eVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-692" y="1688"/>
+            <point key="canvasLocation" x="-732" y="1768"/>
         </scene>
     </scenes>
     <resources>
