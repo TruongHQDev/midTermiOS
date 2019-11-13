@@ -99,17 +99,26 @@ extension UIViewController {
 
 extension CreateEventViewController : UIPopoverPresentationControllerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "toPopupFont" {
+        if segue.identifier == "toPopupFont" {
            let pvc: PopupChooseFontViewController = segue.destination as! PopupChooseFontViewController
            pvc.popoverPresentationController!.delegate = self
            
            let presentationViewController = pvc.popoverPresentationController
-               presentationViewController?.permittedArrowDirections = .up
+            presentationViewController?.permittedArrowDirections = .up
            presentationViewController?.delegate = self
            presentationViewController?.sourceView = OutletFontButton
            presentationViewController?.sourceRect = OutletFontButton.bounds
-           }
-       }
+        } else if segue.identifier == "toPopupFontColor" {
+            let pvc: PopupChooseFontColorViewController = segue.destination as! PopupChooseFontColorViewController
+            pvc.popoverPresentationController!.delegate = self
+            
+            let presentationViewController = pvc.popoverPresentationController
+            presentationViewController?.permittedArrowDirections = .up
+            presentationViewController?.delegate = self
+            presentationViewController?.sourceView = OutletFontColorButton
+            presentationViewController?.sourceRect = OutletFontColorButton.bounds
+        }
+    }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none

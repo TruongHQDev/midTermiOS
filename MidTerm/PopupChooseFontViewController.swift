@@ -30,7 +30,6 @@ class PopupChooseFontViewController: UIViewController {
     
     @IBAction func okTapped(_ sender: Any) {
         
-        
     }
     
     
