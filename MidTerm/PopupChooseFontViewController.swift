@@ -11,7 +11,6 @@ import UIKit
 class PopupChooseFontViewController: UIViewController {
     @IBOutlet weak var pickerViewFont: UIPickerView!
    
-    var pickerViewFontShow: PickerViewFont?
     var fonts : [String] = []
     
     override func viewDidLoad() {
@@ -24,12 +23,17 @@ class PopupChooseFontViewController: UIViewController {
         let fontFamilyNames = UIFont.familyNames
         
         for familyName in fontFamilyNames {
-           // print("Font Family Name = [\(familyName)]")
-            //let names = UIFont.fontNames(forFamilyName: familyName)
-           // print("Font Names = [\(names)]")
             fonts.append("\(familyName)")
         }
     }
+    
+    
+    @IBAction func okTapped(_ sender: Any) {
+        
+        
+    }
+    
+    
     
     
     @IBAction func cancelTapped(_ sender: Any) {
@@ -38,10 +42,7 @@ class PopupChooseFontViewController: UIViewController {
     }
     
     
-    @IBAction func test(_ sender: Any) {
-        print("test")
-    }
-    
+   
     
     
 }
@@ -55,7 +56,7 @@ extension PopupChooseFontViewController: UIPickerViewDelegate, UIPickerViewDataS
         return fonts.count
     }
     
-    
+     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = view as? UILabel ?? UILabel()
         label.font = UIFont(name: "\(fonts[row])", size: 17)
@@ -68,6 +69,3 @@ extension PopupChooseFontViewController: UIPickerViewDelegate, UIPickerViewDataS
 }
 
 
-protocol PickerViewFont {
-    func isCancel(cancel: Bool)
-}

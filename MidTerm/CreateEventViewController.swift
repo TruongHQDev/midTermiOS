@@ -8,24 +8,14 @@
 
 import UIKit
 
-class CreateEventViewController: UIViewController, PickerViewFont {
-    func isCancel(cancel: Bool) {
-        
-        
-        
-        print("here")
-    }
-    
-    
-    //declare popup
-    @IBOutlet weak var popupChooseFontView: UIView!
-    var popupChooseFontViewController: PopupChooseFontViewController?
-    
-    
-    
-    @IBOutlet weak var popupChooseFontColorView: UIView!
+class CreateEventViewController: UIViewController {
+   
     
     //declare properties
+    @IBOutlet weak var OutletFontButton: UIButton!
+    
+    @IBOutlet weak var OutletFontColorButton: UIButton!
+    
     
     @IBOutlet weak var txtEventName: UITextField!
     
@@ -56,8 +46,6 @@ class CreateEventViewController: UIViewController, PickerViewFont {
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
         
-        popupChooseFontView.isHidden = false
-        popupChooseFontColorView.isHidden = true
     }
     
     @IBAction func exitTapped(_ sender: Any) {
@@ -69,26 +57,13 @@ class CreateEventViewController: UIViewController, PickerViewFont {
     
     //buttons choose font for event
     @IBAction func chooseFontTapped(_ sender: Any) {
-        if isFontHide {
-            popupChooseFontView.isHidden = false
-            isFontHide = false
-        } else {
-            popupChooseFontView.isHidden = true
-            isFontHide = true
-        }
+
         
     }
     
     //buttons choose font color for event
     @IBAction func chooseFontColorTapped(_ sender: Any) {
-        if isFontColorHide {
-            popupChooseFontColorView.isHidden = false
-            isFontColorHide = false
-        } else {
-            popupChooseFontColorView.isHidden = true
-            isFontColorHide = true
-        }
-        
+
     }
     
 
@@ -105,29 +80,7 @@ class CreateEventViewController: UIViewController, PickerViewFont {
     @IBAction func sldFontSize(_ sender: Any) {
         lbFontSize.text = "\(Int(sldFontSize.value))"
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "eventToPopupFont" {
-//            popupChooseFontViewController = segue.destination as? PopupChooseFontViewController
-//            popupChooseFontViewController!.pickerViewFontShow = self
-//        }
-//    }
-    
-//    func isCancel(cancel: Bool) {
-//       // popupChooseFontView.isHidden = cancel ? true : false
-//        if cancel {
-//            popupChooseFontView.isHidden = true
-//            print("here")
-//        } else {
-//            popupChooseFontView.isHidden = false
-//        }
-//    }
-    
-    
-    
-    
-    
-    
+       
 }
 
 
@@ -141,5 +94,25 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension CreateEventViewController : UIPopoverPresentationControllerDelegate {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "toPopupFont" {
+           let pvc: PopupChooseFontViewController = segue.destination as! PopupChooseFontViewController
+           pvc.popoverPresentationController!.delegate = self
+           
+           let presentationViewController = pvc.popoverPresentationController
+               presentationViewController?.permittedArrowDirections = .up
+           presentationViewController?.delegate = self
+           presentationViewController?.sourceView = OutletFontButton
+           presentationViewController?.sourceRect = OutletFontButton.bounds
+           }
+       }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+        
     }
 }
