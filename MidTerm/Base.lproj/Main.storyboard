@@ -657,7 +657,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <action selector="exitTapped:" destination="vdV-Qv-Wt9" eventType="touchUpInside" id="Jzn-Dz-9Vv"/>
+                                            <action selector="exitTapped:" destination="vdV-Qv-Wt9" eventType="touchUpInside" id="ddg-zY-dAg"/>
                                             <action selector="exitTapped:" destination="t6c-Cr-r5f" eventType="touchUpInside" id="wzW-Aq-Era"/>
                                         </connections>
                                     </button>
@@ -678,6 +678,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <connections>
                                             <action selector="exitTapped:" destination="t6c-Cr-r5f" eventType="touchUpInside" id="owj-2W-Zgv"/>
+                                            <action selector="saveTapped:" destination="vdV-Qv-Wt9" eventType="touchUpInside" id="CUr-jr-rPp"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1079,7 +1080,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ev-5N-XPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-732" y="1338"/>
+            <point key="canvasLocation" x="-791" y="1509"/>
         </scene>
         <!--Popup Choose Font Color View Controller-->
         <scene sceneID="ZbP-1W-yHy">
@@ -1132,7 +1133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3JP-C2-eVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-780" y="1699.2503748125939"/>
+            <point key="canvasLocation" x="-791" y="1799"/>
         </scene>
     </scenes>
     <resources>

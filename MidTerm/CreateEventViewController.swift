@@ -45,6 +45,9 @@ class CreateEventViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+        let fontLB = "Arial"
+        lbFont.font = UIFont(name: fontLB, size: 17)
+        lbFont.text = fontLB
         
     }
     
@@ -57,13 +60,10 @@ class CreateEventViewController: UIViewController {
     
     //buttons choose font for event
     @IBAction func chooseFontTapped(_ sender: Any) {
-
-        
     }
     
     //buttons choose font color for event
     @IBAction func chooseFontColorTapped(_ sender: Any) {
-
     }
     
 
@@ -81,6 +81,18 @@ class CreateEventViewController: UIViewController {
         lbFontSize.text = "\(Int(sldFontSize.value))"
     }
        
+    @IBAction func saveTapped(_ sender: Any) {
+        if let eventName = txtEventName.text {
+            UserDefaults.standard.set(eventName, forKey: "eventName")
+        } else {
+            
+            return
+        }
+        
+    }
+    
+
+    
 }
 
 
@@ -102,7 +114,8 @@ extension CreateEventViewController : UIPopoverPresentationControllerDelegate {
         if segue.identifier == "toPopupFont" {
            let pvc: PopupChooseFontViewController = segue.destination as! PopupChooseFontViewController
            pvc.popoverPresentationController!.delegate = self
-           
+            pvc.delegate = self
+            
            let presentationViewController = pvc.popoverPresentationController
             presentationViewController?.permittedArrowDirections = .up
            presentationViewController?.delegate = self
@@ -124,4 +137,17 @@ extension CreateEventViewController : UIPopoverPresentationControllerDelegate {
         return UIModalPresentationStyle.none
         
     }
+}
+
+
+extension CreateEventViewController: FontDelegate {
+    func fontShow(font: String) {
+        lbFont.text = font
+        
+        lbFont.font = UIFont(name: font, size: 17)
+    }
+    
+    
+    
+    
 }

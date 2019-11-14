@@ -12,38 +12,32 @@ class PopupChooseFontViewController: UIViewController {
     @IBOutlet weak var pickerViewFont: UIPickerView!
    
     var fonts : [String] = []
-    
+    let fontFamilyNames = UIFont.familyNames
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerViewFont.dataSource = self
         pickerViewFont.delegate = self
-        
-        
-        // Do any additilet fontFamilyNames = UIFont.familyNames()
-        let fontFamilyNames = UIFont.familyNames
         
         for familyName in fontFamilyNames {
             fonts.append("\(familyName)")
         }
     }
     
-    
+    var fontTemp:String!
     @IBAction func okTapped(_ sender: Any) {
         
+        delegate?.fontShow(font: fontTemp!)
+        dismiss(animated: true, completion: nil)
     }
-    
-    
-    
+
     
     @IBAction func cancelTapped(_ sender: Any) {
         
         print("cancel")
     }
     
-    
-   
-    
-    
+    var delegate:FontDelegate?
+
 }
 
 extension PopupChooseFontViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -63,6 +57,12 @@ extension PopupChooseFontViewController: UIPickerViewDelegate, UIPickerViewDataS
         label.textAlignment = .center
         label.text = fonts[row]
         return label
+    }
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        fontTemp = fontFamilyNames[row]
     }
     
 }

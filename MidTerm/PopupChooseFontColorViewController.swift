@@ -57,6 +57,11 @@ class PopupChooseFontColorViewController: UIViewController, UICollectionViewDele
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //UserDefaults.standard.set("\(tableData[indexPath.row])", forKey: "colorEvent")
+        //print("\(UserDefaults.standard.value(forKey: "colorEvent"))")
+    }
+    
     
     func hexStringToUIColor (_ hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
