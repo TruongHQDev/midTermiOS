@@ -53,7 +53,7 @@ class PopupChooseFontColorViewController: UIViewController, UICollectionViewDele
         cell.backgroundColor = hexStringToUIColor(hex)
         cell.layer.cornerRadius = cell.frame.size.width/2
         cell.clipsToBounds = true
-        cell.layer.borderWidth = 1.0
+        cell.layer.borderWidth = 0.5
         return cell
     }
     

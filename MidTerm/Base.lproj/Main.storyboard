@@ -1090,7 +1090,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZUq-OM-1kl">
-                                <rect key="frame" x="0.0" y="0.0" width="275" height="150"/>
+                                <rect key="frame" x="10" y="10" width="255" height="130"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QbP-8Y-nwA">
                                     <size key="itemSize" width="78" height="65"/>
@@ -1115,12 +1115,12 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ZUq-OM-1kl" firstAttribute="bottom" secondItem="IdB-NU-nc6" secondAttribute="bottom" id="41X-KD-PMi"/>
-                            <constraint firstItem="ZUq-OM-1kl" firstAttribute="trailing" secondItem="IdB-NU-nc6" secondAttribute="trailing" id="9ED-JL-u45"/>
-                            <constraint firstItem="ZUq-OM-1kl" firstAttribute="leading" secondItem="IdB-NU-nc6" secondAttribute="leading" id="Kvl-Uk-U2u"/>
-                            <constraint firstItem="ZUq-OM-1kl" firstAttribute="top" secondItem="IdB-NU-nc6" secondAttribute="top" id="i14-TA-PKH"/>
+                            <constraint firstItem="IdB-NU-nc6" firstAttribute="bottom" secondItem="ZUq-OM-1kl" secondAttribute="bottom" constant="10" id="G2y-9w-hKx"/>
+                            <constraint firstItem="IdB-NU-nc6" firstAttribute="trailing" secondItem="ZUq-OM-1kl" secondAttribute="trailing" constant="10" id="SZZ-KP-bRB"/>
+                            <constraint firstItem="ZUq-OM-1kl" firstAttribute="top" secondItem="IdB-NU-nc6" secondAttribute="top" constant="10" id="W1f-JL-dUF"/>
+                            <constraint firstItem="ZUq-OM-1kl" firstAttribute="leading" secondItem="IdB-NU-nc6" secondAttribute="leading" constant="10" id="ddG-VD-bBm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IdB-NU-nc6"/>
                     </view>
