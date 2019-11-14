@@ -12,3 +12,9 @@ import Foundation
 protocol FontDelegate {
     func fontShow(font: String)
 }
+
+
+
+protocol FontColorDelegate {
+    func fontColorShow(color: String)
+}

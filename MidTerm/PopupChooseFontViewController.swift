@@ -10,7 +10,9 @@ import UIKit
 
 class PopupChooseFontViewController: UIViewController {
     @IBOutlet weak var pickerViewFont: UIPickerView!
-   
+   var delegate:FontDelegate?
+    
+    
     var fonts : [String] = []
     let fontFamilyNames = UIFont.familyNames
     override func viewDidLoad() {
@@ -36,7 +38,7 @@ class PopupChooseFontViewController: UIViewController {
         print("cancel")
     }
     
-    var delegate:FontDelegate?
+    
 
 }
 

@@ -124,6 +124,8 @@ extension CreateEventViewController : UIPopoverPresentationControllerDelegate {
         } else if segue.identifier == "toPopupFontColor" {
             let pvc: PopupChooseFontColorViewController = segue.destination as! PopupChooseFontColorViewController
             pvc.popoverPresentationController!.delegate = self
+            pvc.delegate = self
+            
             
             let presentationViewController = pvc.popoverPresentationController
             presentationViewController?.permittedArrowDirections = .up
@@ -140,14 +142,16 @@ extension CreateEventViewController : UIPopoverPresentationControllerDelegate {
 }
 
 
-extension CreateEventViewController: FontDelegate {
+extension CreateEventViewController: FontDelegate, FontColorDelegate {
+    func fontColorShow(color: String) {
+        print(color)
+        vwFontColor.backgroundColor = hexStringToUIColor(color)
+        //lbFont.textColor = hexStringToUIColor(color)
+    }
+    
     func fontShow(font: String) {
         lbFont.text = font
         
         lbFont.font = UIFont(name: font, size: 17)
     }
-    
-    
-    
-    
 }
