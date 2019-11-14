@@ -82,13 +82,14 @@ class CreateEventViewController: UIViewController {
     }
        
     @IBAction func saveTapped(_ sender: Any) {
-        if let eventName = txtEventName.text {
-            UserDefaults.standard.set(eventName, forKey: "eventName")
-        } else {
-            
-            return
-        }
+        UserDefaults.standard.setValue(txtEventName.text, forKey: "eventName")
+        //print(UserDefaults.standard.value(forKey: "eventName"))
+        UserDefaults.standard.setValue(lbFont.text, forKey: "eventFont")
+        //print(UserDefaults.standard.value(forKey: "eventFont")
+        UserDefaults.standard.setValue(vwFontColor.restorationIdentifier, forKey: "eventFontColor")
+        //print(UserDefaults.standard.value(forKey: "eventFontColor"))
         
+       
     }
     
 
@@ -144,8 +145,11 @@ extension CreateEventViewController : UIPopoverPresentationControllerDelegate {
 
 extension CreateEventViewController: FontDelegate, FontColorDelegate {
     func fontColorShow(color: String) {
-        print(color)
+       // print(color)
         vwFontColor.backgroundColor = hexStringToUIColor(color)
+        vwFontColor.restorationIdentifier = color //to save name of color by hex
+        
+       
         //lbFont.textColor = hexStringToUIColor(color)
     }
     
