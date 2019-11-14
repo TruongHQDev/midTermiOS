@@ -12,7 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        UserDefaults.standard.set("", forKey: "eventName")
+        UserDefaults.standard.set("", forKey: "color")
+        
+        
     }
 
 
