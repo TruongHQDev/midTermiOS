@@ -34,8 +34,7 @@ class PopupChooseFontViewController: UIViewController {
 
     
     @IBAction func cancelTapped(_ sender: Any) {
-        
-        print("cancel")
+        dismiss(animated: true, completion: nil)
     }
     
     

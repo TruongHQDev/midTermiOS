@@ -44,10 +44,36 @@ class CreateEventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
         // Do any additional setup after loading the view.
-        let fontLB = "Arial"
-        lbFont.font = UIFont(name: fontLB, size: 17)
-        lbFont.text = fontLB
+        let event = UserDefaults.standard
+        
+//
+//        if event.value(forKey: "eventFont") != nil   {
+//            lbFont.text = event.value(forKey: "eventFont") as! String
+//            lbFont.font = UIFont(name: event.value(forKey: "eventFont") as! String, size: 17)
+//
+//        } else {
+//            lbFont.text = "Arial"
+//            lbFont.font = UIFont(name: "Arial", size: 17)
+//        }
+//
+//        if event.value(forKey: "eventFontColor") != nil {
+//            vwFontColor.backgroundColor = hexStringToUIColor(event.value(forKey: "eventFontColor") as! String)
+////            vwFontColor.restorationIdentifier = event.value(forKey: "eventFontColor") as! String
+//        } else {
+//            vwFontColor.backgroundColor = hexStringToUIColor("000000")
+////            vwFontColor.restorationIdentifier = "000000"
+//        }
+//
+//
+        
+        lbFont.text = "Arial"
+        lbFont.font = UIFont(name: "Arial", size: 17)
+        vwFontColor.backgroundColor = hexStringToUIColor("000000")
+        
+        
+        
         
     }
     
@@ -78,7 +104,8 @@ class CreateEventViewController: UIViewController {
     }
     
     @IBAction func sldFontSize(_ sender: Any) {
-        lbFontSize.text = "\(Int(sldFontSize.value))"
+//        lbFontSize.text = "\(Int(sldFontSize.value))"
+        lbFontSize.text = String(format: "%.1f", sldFontSize.value)
     }
        
     @IBAction func saveTapped(_ sender: Any) {
@@ -88,7 +115,8 @@ class CreateEventViewController: UIViewController {
         //print(UserDefaults.standard.value(forKey: "eventFont")
         UserDefaults.standard.setValue(vwFontColor.restorationIdentifier, forKey: "eventFontColor")
         //print(UserDefaults.standard.value(forKey: "eventFontColor"))
-        
+       // print(Int(sldFontSize.value))
+        UserDefaults.standard.setValue(sldFontSize.value, forKey: "eventFontSize")
        
     }
     
