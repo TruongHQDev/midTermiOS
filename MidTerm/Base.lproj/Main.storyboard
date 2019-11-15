@@ -350,7 +350,7 @@
                                         <rect key="frame" x="0.0" y="30" width="375" height="290"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" id="Fj8-yP-PCY" customClass="ListMemberTableViewCell" customModule="MidTerm" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" id="Fj8-yP-PCY" customClass="ListGuestTableViewCell" customModule="MidTerm" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fj8-yP-PCY" id="JLp-aE-BhA">
@@ -405,6 +405,12 @@
                                                         <constraint firstItem="iIC-8r-7Sf" firstAttribute="leading" secondItem="JLp-aE-BhA" secondAttribute="leading" constant="253" id="zCu-6c-KKI"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="lbGuest" destination="6tj-xs-OSh" id="ALy-5B-hxV"/>
+                                                    <outlet property="lbName" destination="TY1-PY-FST" id="ATp-JR-Hpg"/>
+                                                    <outlet property="lbSection" destination="iIC-8r-7Sf" id="7F2-yk-0mk"/>
+                                                    <outlet property="lbTable" destination="5cN-VG-Kb9" id="5XI-qq-Fwz"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>

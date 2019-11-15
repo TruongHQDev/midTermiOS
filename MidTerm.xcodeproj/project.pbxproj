@@ -25,7 +25,7 @@
 		65EB26CB08EBA66B3D4F6956 /* Pods_MidTerm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C178173588A72F7852325 /* Pods_MidTerm.framework */; };
 		A36AA66D237CFE910066C578 /* ColorPalette.plist in Resources */ = {isa = PBXBuildFile; fileRef = A36AA66C237CFE910066C578 /* ColorPalette.plist */; };
 		A36AA671237D38250066C578 /* ProtocolSup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AA670237D38250066C578 /* ProtocolSup.swift */; };
-		A36AA6F9237E8D1D0066C578 /* RealmSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AA6F8237E8D1D0066C578 /* RealmSwift.swift */; };
+		A36AA6F9237E8D1D0066C578 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AA6F8237E8D1D0066C578 /* RealmService.swift */; };
 		A36AA6FB237EA1700066C578 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AA6FA237EA1700066C578 /* Guest.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,7 @@
 		46A1625E35FCCE879406C21E /* Pods-MidTerm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidTerm.debug.xcconfig"; path = "Target Support Files/Pods-MidTerm/Pods-MidTerm.debug.xcconfig"; sourceTree = "<group>"; };
 		A36AA66C237CFE910066C578 /* ColorPalette.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorPalette.plist; sourceTree = "<group>"; };
 		A36AA670237D38250066C578 /* ProtocolSup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolSup.swift; sourceTree = "<group>"; };
-		A36AA6F8237E8D1D0066C578 /* RealmSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSwift.swift; sourceTree = "<group>"; };
+		A36AA6F8237E8D1D0066C578 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		A36AA6FA237EA1700066C578 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		AB160EBB55A7218C4D710C30 /* Pods-MidTerm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidTerm.release.xcconfig"; path = "Target Support Files/Pods-MidTerm/Pods-MidTerm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +107,7 @@
 				03E702742379000800AF5886 /* Extension.swift */,
 				A36AA66C237CFE910066C578 /* ColorPalette.plist */,
 				A36AA670237D38250066C578 /* ProtocolSup.swift */,
-				A36AA6F8237E8D1D0066C578 /* RealmSwift.swift */,
+				A36AA6F8237E8D1D0066C578 /* RealmService.swift */,
 				A36AA6FA237EA1700066C578 /* Guest.swift */,
 			);
 			path = MidTerm;
@@ -247,7 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				030A9731237562F800236648 /* ListGuestTableViewController.swift in Sources */,
-				A36AA6F9237E8D1D0066C578 /* RealmSwift.swift in Sources */,
+				A36AA6F9237E8D1D0066C578 /* RealmService.swift in Sources */,
 				030A972123727BE800236648 /* GuestMainViewController.swift in Sources */,
 				030A972D237508F600236648 /* PopupChooseFontColorViewController.swift in Sources */,
 				03E702752379000800AF5886 /* Extension.swift in Sources */,
