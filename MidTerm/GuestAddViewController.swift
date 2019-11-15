@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+
 
 class GuestAddViewController: UIViewController {
 
