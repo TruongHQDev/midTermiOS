@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -350,7 +349,7 @@
                                         <rect key="frame" x="0.0" y="30" width="375" height="290"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" id="Fj8-yP-PCY" customClass="ListGuestTableViewCell" customModule="MidTerm" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="guestCell" id="Fj8-yP-PCY" customClass="ListGuestTableViewCell" customModule="MidTerm" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fj8-yP-PCY" id="JLp-aE-BhA">
@@ -413,6 +412,10 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="vdV-Qv-Wt9" id="qff-yh-bPp"/>
+                                            <outlet property="delegate" destination="vdV-Qv-Wt9" id="4Gv-dD-uYz"/>
+                                        </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-ME-JVC">
                                         <rect key="frame" x="340" y="0.0" width="30" height="30"/>
@@ -741,13 +744,13 @@
         <!--Popup Create Event Noti View Controller-->
         <scene sceneID="fpC-ZQ-5Y3">
             <objects>
-                <viewController storyboardIdentifier="PopupCreateEventNotiViewController" modalPresentationStyle="overCurrentContext" id="TCn-Ss-0uC" customClass="PopupCreateEventNotiViewController" customModule="MidTerm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PopupCreateEventNotiViewController" modalPresentationStyle="overFullScreen" id="TCn-Ss-0uC" customClass="PopupCreateEventNotiViewController" customModule="MidTerm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0pT-uo-O7J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyA-CD-0Ss">
-                                <rect key="frame" x="63.5" y="209.5" width="248" height="228"/>
+                                <rect key="frame" x="63.5" y="219.5" width="248" height="228"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Creating new event will delete all the info from the previous or current event in the app." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0l-kP-2ff">
                                         <rect key="frame" x="10" y="27" width="228" height="105"/>
@@ -941,17 +944,17 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUo-KZ-TMq">
                                         <rect key="frame" x="0.0" y="94.5" width="245" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u8H-wg-FSI">
                                         <rect key="frame" x="0.0" y="141.5" width="245" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LOJ-G8-ovj">
                                         <rect key="frame" x="0.0" y="188.5" width="245" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -1025,6 +1028,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9wT-th-TkD"/>
                     </view>
+                    <connections>
+                        <outlet property="txtFirstName" destination="Onm-bL-SXG" id="yNY-bE-PoI"/>
+                        <outlet property="txtGuestFriend" destination="eUo-KZ-TMq" id="duu-uE-7xQ"/>
+                        <outlet property="txtLastName" destination="C8h-pf-UC3" id="lJw-0V-cUj"/>
+                        <outlet property="txtSection" destination="LOJ-G8-ovj" id="d10-4Z-9hm"/>
+                        <outlet property="txtTable" destination="u8H-wg-FSI" id="Ut2-2L-yP2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zJ-e4-RBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -32,10 +32,13 @@ class ListGuestTableViewCell: UITableViewCell {
     
     
     func configure(with guest: Guest) {
-        lbName.text = "\(guest.firstName),\(guest.lastName)"
-        lbGuest.text = guest.guestString()
-        lbTable.text = guest.table
-        lbSection.text = guest.section
+        guard let firstName = guest.firstName, let lastName = guest.lastName, let guestFriend = guest.guests, let table = guest.table, let section = guest.section  else {return}
+        
+        
+        lbName.text = "\(firstName),\(lastName)"
+        lbGuest.text = guestFriend
+        lbTable.text = table
+        lbSection.text = section
     }
 
 }

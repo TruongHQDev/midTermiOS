@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CreateEventViewController: UIViewController {
    
@@ -41,12 +42,16 @@ class CreateEventViewController: UIViewController {
     var isFontColorHide = true
     
     
+    //data guest
+    var dataGuest : [Guest] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        
+        selectAllObject()
+
         // Do any additional setup after loading the view.
-        let event = UserDefaults.standard
+  //      let event = UserDefaults.standard
         
 //
 //        if event.value(forKey: "eventFont") != nil   {
@@ -71,10 +76,6 @@ class CreateEventViewController: UIViewController {
         lbFont.text = "Arial"
         lbFont.font = UIFont(name: "Arial", size: 17)
         vwFontColor.backgroundColor = hexStringToUIColor("000000")
-        
-        
-        
-        
     }
     
     @IBAction func exitTapped(_ sender: Any) {
@@ -120,7 +121,31 @@ class CreateEventViewController: UIViewController {
        
     }
     
-
+    func selectAllObject() {
+         let realm = try! Realm()
+         dataGuest.removeAll()
+        
+         let guests = realm.objects(Guest.self)
+         for guest in guests {
+//            let temp = Guest()
+//            guard let firstName = guest.firstName, let lastname = guest.lastName, let guestFriend = guest.guests, let table = guest.table, let section = guest.section  else {
+//                return
+            //}
+            
+//            temp.firstName = firstName
+//            temp.lastName = lastname
+//            temp.guests = guestFriend
+//            temp.table = table
+//            temp.section = section
+//            print(temp.firstName)
+//            print(temp.lastName)
+//            print(temp.section)
+            self.dataGuest.append(guest)
+         }
+        
+        tableGuests.reloadData()
+     }
+     
     
 }
 
@@ -186,4 +211,32 @@ extension CreateEventViewController: FontDelegate, FontColorDelegate {
         
         lbFont.font = UIFont(name: font, size: 17)
     }
+}
+
+extension CreateEventViewController: UITableViewDelegate, UITableViewDataSource {
+    
+
+ 
+//    override func viewWillAppear(_ animated: Bool) {
+//        selectAllObject()
+//    }
+
+
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       // print(dataGuest)
+        return dataGuest.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "guestCell", for: indexPath) as! ListGuestTableViewCell
+  //      cell.textLabel?.text = dataGuest[indexPath.row].firstName
+        
+        let guest = dataGuest[indexPath.row]
+        cell.configure(with: guest)
+        return cell
+    }
+    
+    
 }
