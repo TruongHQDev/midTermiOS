@@ -27,6 +27,7 @@
 		A36AA671237D38250066C578 /* ProtocolSup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AA670237D38250066C578 /* ProtocolSup.swift */; };
 		A36AA6F9237E8D1D0066C578 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AA6F8237E8D1D0066C578 /* RealmService.swift */; };
 		A36D163323829F0D00E27C78 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D163223829F0D00E27C78 /* Guest.swift */; };
+		A36D16352384D36200E27C78 /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D16342384D36200E27C78 /* EditEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		A36AA670237D38250066C578 /* ProtocolSup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolSup.swift; sourceTree = "<group>"; };
 		A36AA6F8237E8D1D0066C578 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		A36D163223829F0D00E27C78 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
+		A36D16342384D36200E27C78 /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
 		AB160EBB55A7218C4D710C30 /* Pods-MidTerm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidTerm.release.xcconfig"; path = "Target Support Files/Pods-MidTerm/Pods-MidTerm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 				A36AA670237D38250066C578 /* ProtocolSup.swift */,
 				A36AA6F8237E8D1D0066C578 /* RealmService.swift */,
 				A36D163223829F0D00E27C78 /* Guest.swift */,
+				A36D16342384D36200E27C78 /* EditEventViewController.swift */,
 			);
 			path = MidTerm;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				030A97252372B42000236648 /* CreateEventViewController.swift in Sources */,
 				A36D163323829F0D00E27C78 /* Guest.swift in Sources */,
 				030A972923741A3A00236648 /* GuestAddViewController.swift in Sources */,
+				A36D16352384D36200E27C78 /* EditEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,3 +18,9 @@ protocol FontDelegate {
 protocol FontColorDelegate {
     func fontColorShow(color: String)
 }
+
+
+
+protocol NotificationAddGuestDelegate {
+    func isAddedGuest(added: Bool)
+}

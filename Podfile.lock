@@ -4,19 +4,23 @@ PODS:
   - Realm/Headers (4.1.0)
   - RealmSwift (4.1.0):
     - Realm (= 4.1.0)
+  - StatusAlert (1.1.1)
 
 DEPENDENCIES:
   - RealmSwift
+  - StatusAlert (~> 1.1.1)
 
 SPEC REPOS:
   trunk:
     - Realm
     - RealmSwift
+    - StatusAlert
 
 SPEC CHECKSUMS:
   Realm: 5d1453468eca02c901c50b8a356f4a98a15b57aa
   RealmSwift: 1d238caa5c64a590c669beef1a7e858a6cf55a1c
+  StatusAlert: a18ec3c33d36a06d4479c1f2b15ffac67aaf7ab1
 
-PODFILE CHECKSUM: 16fee4b240f5f8a161ade7677b8002d1aad51261
+PODFILE CHECKSUM: a6491732b62ca288b8c70c84a42bbd0d2d6034aa
 
 COCOAPODS: 1.8.4

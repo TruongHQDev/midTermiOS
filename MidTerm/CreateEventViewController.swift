@@ -49,33 +49,11 @@ class CreateEventViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         selectAllObject()
-
-        // Do any additional setup after loading the view.
-  //      let event = UserDefaults.standard
-        
-//
-//        if event.value(forKey: "eventFont") != nil   {
-//            lbFont.text = event.value(forKey: "eventFont") as! String
-//            lbFont.font = UIFont(name: event.value(forKey: "eventFont") as! String, size: 17)
-//
-//        } else {
-//            lbFont.text = "Arial"
-//            lbFont.font = UIFont(name: "Arial", size: 17)
-//        }
-//
-//        if event.value(forKey: "eventFontColor") != nil {
-//            vwFontColor.backgroundColor = hexStringToUIColor(event.value(forKey: "eventFontColor") as! String)
-////            vwFontColor.restorationIdentifier = event.value(forKey: "eventFontColor") as! String
-//        } else {
-//            vwFontColor.backgroundColor = hexStringToUIColor("000000")
-////            vwFontColor.restorationIdentifier = "000000"
-//        }
-//
-//
         
         lbFont.text = "Arial"
         lbFont.font = UIFont(name: "Arial", size: 17)
         vwFontColor.backgroundColor = hexStringToUIColor("000000")
+        lbFontSize.text = String(format: "%.1f", sldFontSize.value)
     }
     
     @IBAction func exitTapped(_ sender: Any) {
@@ -99,7 +77,7 @@ class CreateEventViewController: UIViewController {
     //buttons add detail guest
     @IBAction func addDetailTapped(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "GuestAddViewController") as! GuestAddViewController
-        
+        vc.delegate = self
         self.present(vc, animated: true, completion: nil)
     
     }
@@ -118,7 +96,7 @@ class CreateEventViewController: UIViewController {
         //print(UserDefaults.standard.value(forKey: "eventFontColor"))
        // print(Int(sldFontSize.value))
         UserDefaults.standard.setValue(sldFontSize.value, forKey: "eventFontSize")
-       
+        
     }
     
     func selectAllObject() {
@@ -127,25 +105,14 @@ class CreateEventViewController: UIViewController {
         
          let guests = realm.objects(Guest.self)
          for guest in guests {
-//            let temp = Guest()
-//            guard let firstName = guest.firstName, let lastname = guest.lastName, let guestFriend = guest.guests, let table = guest.table, let section = guest.section  else {
-//                return
-            //}
-            
-//            temp.firstName = firstName
-//            temp.lastName = lastname
-//            temp.guests = guestFriend
-//            temp.table = table
-//            temp.section = section
-//            print(temp.firstName)
-//            print(temp.lastName)
-//            print(temp.section)
             self.dataGuest.append(guest)
          }
-        
         tableGuests.reloadData()
+        
      }
      
+    
+  
     
 }
 
@@ -214,16 +181,6 @@ extension CreateEventViewController: FontDelegate, FontColorDelegate {
 }
 
 extension CreateEventViewController: UITableViewDelegate, UITableViewDataSource {
-    
-
- 
-//    override func viewWillAppear(_ animated: Bool) {
-//        selectAllObject()
-//    }
-
-
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        // print(dataGuest)
         return dataGuest.count
@@ -231,12 +188,25 @@ extension CreateEventViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "guestCell", for: indexPath) as! ListGuestTableViewCell
-  //      cell.textLabel?.text = dataGuest[indexPath.row].firstName
-        
         let guest = dataGuest[indexPath.row]
         cell.configure(with: guest)
         return cell
     }
+}
+
+
+extension CreateEventViewController: NotificationAddGuestDelegate {
+    func isAddedGuest(added: Bool) {
+        if added {
+            selectAllObject()
+            //tableGuests.reloadData()
+        } else {
+            print("unadded")
+        }
+        
+        
+    }
     
     
 }
+

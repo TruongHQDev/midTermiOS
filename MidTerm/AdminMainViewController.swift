@@ -34,5 +34,8 @@ class AdminMainViewController: UIViewController {
 //        present(vc, animated: false, completion: nil)
 //        
     }
+    @IBAction func editEventTapped(_ sender: Any) {
+        
+    }
     
 }

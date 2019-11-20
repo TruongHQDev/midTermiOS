@@ -7,4 +7,5 @@ target 'MidTerm' do
 
   # Pods for MidTerm
 	pod 'RealmSwift'
+	pod 'StatusAlert', '~> 1.1.1'
 end
