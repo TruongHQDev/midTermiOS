@@ -202,18 +202,10 @@ extension EditEventViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "GuestEditViewController") as! GuestEditViewController
-      //  print(indexPath.row)
-        print(dataGuest[indexPath.row])
-        var g = dataGuest[indexPath.row]
-        print(g)
-        
         vc.dataGuest = mapObject(guest: dataGuest[indexPath.row]) 
         self.present(vc, animated: true, completion: nil)
-
     }
 
-    
-    
 }
 
 
