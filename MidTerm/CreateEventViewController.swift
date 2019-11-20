@@ -41,6 +41,9 @@ class CreateEventViewController: UIViewController {
     var isFontHide = true
     var isFontColorHide = true
     
+    //declare realm
+    let realm = RealmService.shared.realm
+    
     
     //data guest
     var dataGuest : [Guest] = []
@@ -48,12 +51,22 @@ class CreateEventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        selectAllObject()
+        
         
         lbFont.text = "Arial"
         lbFont.font = UIFont(name: "Arial", size: 17)
         vwFontColor.backgroundColor = hexStringToUIColor("000000")
         lbFontSize.text = String(format: "%.1f", sldFontSize.value)
+        
+        do {
+            try realm.write {
+                realm.deleteAll()
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        selectAllObject()
     }
     
     @IBAction func exitTapped(_ sender: Any) {
@@ -100,7 +113,7 @@ class CreateEventViewController: UIViewController {
     }
     
     func selectAllObject() {
-         let realm = try! Realm()
+         //let realm = try! Realm()
          dataGuest.removeAll()
         
          let guests = realm.objects(Guest.self)
@@ -108,12 +121,7 @@ class CreateEventViewController: UIViewController {
             self.dataGuest.append(guest)
          }
         tableGuests.reloadData()
-        
      }
-     
-    
-  
-    
 }
 
 
@@ -147,7 +155,6 @@ extension CreateEventViewController : UIPopoverPresentationControllerDelegate {
             pvc.popoverPresentationController!.delegate = self
             pvc.delegate = self
             
-            
             let presentationViewController = pvc.popoverPresentationController
             presentationViewController?.permittedArrowDirections = .up
             presentationViewController?.delegate = self
@@ -165,12 +172,9 @@ extension CreateEventViewController : UIPopoverPresentationControllerDelegate {
 
 extension CreateEventViewController: FontDelegate, FontColorDelegate {
     func fontColorShow(color: String) {
-       // print(color)
         vwFontColor.backgroundColor = hexStringToUIColor(color)
         vwFontColor.restorationIdentifier = color //to save name of color by hex
-        
-       
-        //lbFont.textColor = hexStringToUIColor(color)
+
     }
     
     func fontShow(font: String) {

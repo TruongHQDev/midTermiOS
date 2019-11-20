@@ -24,12 +24,12 @@ class GuestAddViewController: UIViewController {
     
     var delegate: NotificationAddGuestDelegate?
     
+    let realm = RealmService.shared.realm
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the vi
-        
-    
     }
     
     @IBAction func exitTapped(_ sender: Any) {
@@ -39,9 +39,10 @@ class GuestAddViewController: UIViewController {
     
     @IBAction func saveTapped(_ sender: Any) {
         //save data to realm
-        let realm = try! Realm()
+        //let realm = try! Realm()
+        
         print(Realm.Configuration.defaultConfiguration.fileURL)
-       
+        
         let a = Guest()
          if let firstName = txtFirstName.text, let lastName = txtLastName.text, let guests = txtGuestFriend.text, let table = txtTable.text, let section = txtSection.text {
                      a.firstName = firstName
