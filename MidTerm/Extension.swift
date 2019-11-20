@@ -43,5 +43,17 @@ extension UIViewController {
             alpha: CGFloat(1.0)
         )
     }
+    
+    
+    func mapObject(guest: Guest) -> ViewGuest {
+        var g = ViewGuest()
+        g.firstName = guest.firstName
+        g.lastName = guest.lastName
+        g.guests = guest.guests
+        g.table = guest.table
+        g.section = guest.section
+        
+        return g
+    }
 }
  

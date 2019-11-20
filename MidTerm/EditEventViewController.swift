@@ -34,7 +34,7 @@ class EditEventViewController: UIViewController {
     
     var dataGuest : [Guest] = []
     
-    
+    var delegate: EditGuestDelegate?
     
     
     
@@ -148,6 +148,7 @@ extension EditEventViewController : UIPopoverPresentationControllerDelegate {
             presentationViewController?.sourceView = lbFontColorButton
             presentationViewController?.sourceRect = lbFontColorButton.bounds
         }
+               
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -196,4 +197,23 @@ extension EditEventViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configure(with: guest)
         return cell
     }
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "GuestEditViewController") as! GuestEditViewController
+      //  print(indexPath.row)
+        print(dataGuest[indexPath.row])
+        var g = dataGuest[indexPath.row]
+        print(g)
+        
+        vc.dataGuest = mapObject(guest: dataGuest[indexPath.row]) 
+        self.present(vc, animated: true, completion: nil)
+
+    }
+
+    
+    
 }
+
+

@@ -24,3 +24,8 @@ protocol FontColorDelegate {
 protocol NotificationAddGuestDelegate {
     func isAddedGuest(added: Bool)
 }
+
+
+protocol EditGuestDelegate {
+    func guestNeedEdit(guest: Guest)
+}
