@@ -57,7 +57,7 @@ class EditEventViewController: UIViewController {
     self.hideKeyboardWhenTappedAround()
         selectAllObject()
         
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+       // print(Realm.Configuration.defaultConfiguration.fileURL)
       let event = UserDefaults.standard
         if event.value(forKey: "eventName") != nil   {
             txtEventName.text = event.value(forKey: "eventName") as! String
@@ -106,6 +106,15 @@ class EditEventViewController: UIViewController {
         vc.delegate = self
         self.present(vc, animated: true, completion: nil)
     }
+    
+    @IBAction func saveTapped(_ sender: Any) {
+        UserDefaults.standard.setValue(txtEventName.text, forKey: "eventName")
+         UserDefaults.standard.setValue(lbFont.text, forKey: "eventFont")
+         UserDefaults.standard.setValue(vwFontColor.restorationIdentifier, forKey: "eventFontColor")
+        UserDefaults.standard.setValue(lbSldFontSize.value, forKey: "eventFontSize")
+    }
+    
+    
     
     
     //get all data
@@ -178,8 +187,6 @@ extension EditEventViewController: NotificationAddGuestDelegate {
         if added {
             selectAllObject()
             //tableGuest.reloadData()
-        } else {
-            print("unadded")
         }
     }
 }
@@ -187,7 +194,6 @@ extension EditEventViewController: NotificationAddGuestDelegate {
 
 extension EditEventViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // print(dataGuest)
         return dataGuest.count
     }
     

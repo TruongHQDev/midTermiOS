@@ -28,18 +28,6 @@ class GuestEditViewController: UIViewController {
     var dataGuest = ViewGuest()
     var idInDB: Int? = nil
     let realm = RealmService.shared.realm
-    
-//    func guestNeedEdit(guest: Guest) {
-//        //guard let firstName = guest.firstName, let lastName = guest.lastName, let guestFriend = guest.guests, let table = guest.table, let section = guest.section  else {return}
-//
-//
-//        txtFirstName.text = guest.firstName
-//        txtLastName.text = guest.lastName
-//        txtGuestFriend.text = guest.guests
-//        txtTable.text = guest.table
-//        txtSection.text = guest.section
-//    }
-//    
 
     override func viewDidLoad() {
         super.viewDidLoad()

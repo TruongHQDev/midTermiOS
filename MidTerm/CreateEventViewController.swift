@@ -102,12 +102,8 @@ class CreateEventViewController: UIViewController {
        
     @IBAction func saveTapped(_ sender: Any) {
         UserDefaults.standard.setValue(txtEventName.text, forKey: "eventName")
-        //print(UserDefaults.standard.value(forKey: "eventName"))
         UserDefaults.standard.setValue(lbFont.text, forKey: "eventFont")
-        //print(UserDefaults.standard.value(forKey: "eventFont")
         UserDefaults.standard.setValue(vwFontColor.restorationIdentifier, forKey: "eventFontColor")
-        //print(UserDefaults.standard.value(forKey: "eventFontColor"))
-       // print(Int(sldFontSize.value))
         UserDefaults.standard.setValue(sldFontSize.value, forKey: "eventFontSize")
         
     }
@@ -186,7 +182,6 @@ extension CreateEventViewController: FontDelegate, FontColorDelegate {
 
 extension CreateEventViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // print(dataGuest)
         return dataGuest.count
     }
     
@@ -204,10 +199,7 @@ extension CreateEventViewController: NotificationAddGuestDelegate {
         if added {
             selectAllObject()
             //tableGuests.reloadData()
-        } else {
-            print("unadded")
         }
-        
         
     }
     
