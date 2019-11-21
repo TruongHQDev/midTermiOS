@@ -29,3 +29,8 @@ protocol NotificationAddGuestDelegate {
 protocol EditGuestDelegate {
     func guestNeedEdit(guest: Guest)
 }
+
+
+protocol NotificationEditGuestDelegate {
+    func isEditGuest(added: Bool)
+}

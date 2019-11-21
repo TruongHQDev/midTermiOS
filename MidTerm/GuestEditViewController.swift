@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+
 
 class GuestEditViewController: UIViewController {
     
@@ -21,32 +23,35 @@ class GuestEditViewController: UIViewController {
     @IBOutlet weak var txtSection: UITextField!
     
     
-    //var delegate : EditGuestDelegate?
+    var delegate : NotificationEditGuestDelegate?
     
     var dataGuest = ViewGuest()
+    var idInDB: Int? = nil
+    let realm = RealmService.shared.realm
     
-    
-    func guestNeedEdit(guest: Guest) {
-        //guard let firstName = guest.firstName, let lastName = guest.lastName, let guestFriend = guest.guests, let table = guest.table, let section = guest.section  else {return}
-        
-        
-        txtFirstName.text = guest.firstName
-        txtLastName.text = guest.lastName
-        txtGuestFriend.text = guest.guests
-        txtTable.text = guest.table
-        txtSection.text = guest.section
-    }
-    
+//    func guestNeedEdit(guest: Guest) {
+//        //guard let firstName = guest.firstName, let lastName = guest.lastName, let guestFriend = guest.guests, let table = guest.table, let section = guest.section  else {return}
+//
+//
+//        txtFirstName.text = guest.firstName
+//        txtLastName.text = guest.lastName
+//        txtGuestFriend.text = guest.guests
+//        txtTable.text = guest.table
+//        txtSection.text = guest.section
+//    }
+//    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //guestNeedEdit(guest: dataGuest)
+        hideKeyboardWhenTappedAround()
         txtFirstName.text = dataGuest.firstName
         txtLastName.text = dataGuest.lastName
         txtGuestFriend.text = dataGuest.guests
         txtTable.text = dataGuest.table
         txtSection.text = dataGuest.section
-        // Do any additional setup after loading the view.
+
+       
+
     }
     
     @IBAction func exitTapped(_ sender: Any) {
@@ -56,12 +61,33 @@ class GuestEditViewController: UIViewController {
     
     
     @IBAction func saveTapped(_ sender: Any) {
-        
-        
+        var g = Guest()
+        guard let firstName = txtFirstName.text, let lastName = txtLastName.text, let guestFriend = txtGuestFriend.text, let table = txtTable.text, let section = txtSection.text  else {return}
+        g.firstName = firstName
+        g.lastName = lastName
+        g.guests = guestFriend
+        g.table = table
+        g.section = section
+    
+        guard let id = idInDB else {return}
+        if realm.objects(Guest.self).count > id {
+            print(realm.objects(Guest.self).count)
+            print(id)
+            do {
+                try! realm.write {
+                    realm.objects(Guest.self)[id].firstName = g.firstName
+                    realm.objects(Guest.self)[id].lastName = g.lastName
+                    realm.objects(Guest.self)[id].guests = g.guests
+                    realm.objects(Guest.self)[id].table = g.table
+                    realm.objects(Guest.self)[id].section = g.section
+                }
+                delegate?.isEditGuest(added: true)
+                dismiss(animated: true, completion: nil)
+            } catch {
+                print(error.localizedDescription)
+            }
+        } else {
+            print(Error.self)
+        }
     }
-    
-    
-    
-
-
 }

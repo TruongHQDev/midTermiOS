@@ -57,7 +57,7 @@ class EditEventViewController: UIViewController {
     self.hideKeyboardWhenTappedAround()
         selectAllObject()
         
-        
+        print(Realm.Configuration.defaultConfiguration.fileURL)
       let event = UserDefaults.standard
         if event.value(forKey: "eventName") != nil   {
             txtEventName.text = event.value(forKey: "eventName") as! String
@@ -202,10 +202,22 @@ extension EditEventViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "GuestEditViewController") as! GuestEditViewController
-        vc.dataGuest = mapObject(guest: dataGuest[indexPath.row]) 
+        vc.dataGuest = mapObject(guest: dataGuest[indexPath.row])
+        vc.idInDB = indexPath.row
+        vc.delegate = self
         self.present(vc, animated: true, completion: nil)
     }
 
 }
 
+
+extension EditEventViewController: NotificationEditGuestDelegate {
+    func isEditGuest(added: Bool) {
+        if added {
+            selectAllObject()
+        }
+    }
+    
+    
+}
 
