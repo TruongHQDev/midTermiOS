@@ -22,6 +22,7 @@ class GuestEditViewController: UIViewController {
     
     @IBOutlet weak var txtSection: UITextField!
     
+    @IBOutlet weak var titleEdit: UILabel!
     
     var delegate : NotificationEditGuestDelegate?
     
@@ -38,8 +39,9 @@ class GuestEditViewController: UIViewController {
         txtTable.text = dataGuest.table
         txtSection.text = dataGuest.section
 
-       
-
+//        titleEdit.font = UIFont(name: Theme.fontName as! String, size: Theme.fontSize as! CGFloat)
+//        titleEdit.textColor = hexStringToUIColor(Theme.fontColor as! String)
+    
     }
     
     @IBAction func exitTapped(_ sender: Any) {

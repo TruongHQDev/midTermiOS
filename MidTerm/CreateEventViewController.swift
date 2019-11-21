@@ -191,6 +191,27 @@ extension CreateEventViewController: UITableViewDelegate, UITableViewDataSource 
         cell.configure(with: guest)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, complectionHandler) in
+            
+            do {
+                try! self.realm.write {
+                    
+                    self.realm.delete(self.realm.objects(Guest.self)[indexPath.row])
+                    print("Deleted")
+                    
+                }
+            } catch {
+                print("Can't delete")
+            }
+            complectionHandler(true)
+        }
+        deleteAction.backgroundColor = .red
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
 }
 
 

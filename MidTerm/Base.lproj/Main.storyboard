@@ -1828,6 +1828,7 @@
                         <viewLayoutGuide key="safeArea" id="wf0-EG-DWR"/>
                     </view>
                     <connections>
+                        <outlet property="titleEdit" destination="Dqr-Eh-r0i" id="IQr-tI-LQi"/>
                         <outlet property="txtFirstName" destination="dqH-LB-Sin" id="71E-Yh-2l2"/>
                         <outlet property="txtGuestFriend" destination="kbC-8D-LLF" id="d7z-Wb-1d1"/>
                         <outlet property="txtLastName" destination="Cgf-wh-5Uw" id="O5c-XF-RDe"/>
@@ -1851,7 +1852,7 @@
         <image name="save" width="129" height="132"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PJt-Zc-hzs"/>
-        <segue reference="d69-D0-DBn"/>
+        <segue reference="O5l-pm-fhd"/>
+        <segue reference="ZFN-eS-yb0"/>
     </inferredMetricsTieBreakers>
 </document>
